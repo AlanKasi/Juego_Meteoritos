@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego/Proyectiles/Canion.gd" type="Script" id=1]
+[ext_resource path="res://juego/Proyectiles/Proyectil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Proyectiles/Disparo0.ogg" type="AudioStream" id=3]
+
+[node name="Canion" type="Node2D"]
+script = ExtResource( 1 )
+proyectil = ExtResource( 2 )
+cadencia_disparo = 0.25
+velocidad_proyectil = 800
+
+[node name="PuntoIzquierda" type="Position2D" parent="."]
+
+[node name="PuntoDerecha" type="Position2D" parent="."]
+
+[node name="DisparoSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="TimerEnfriamiento" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="timeout" from="TimerEnfriamiento" to="." method="_on_TimerEnfriamiento_timeout"]
