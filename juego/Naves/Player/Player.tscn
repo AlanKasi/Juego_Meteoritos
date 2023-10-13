@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://juego/Naves/Player/player_orange.png" type="Texture" id=1]
 [ext_resource path="res://juego/Naves/Player/MaterialFisico.tres" type="PhysicsMaterial" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://juego/Proyectiles/Laser/LaserBeam2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://juego/Naves/Player/Estela/Trail2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://juego/Naves/Player/Motor/MotorSFX.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/Naves/Player/ImpactoDanio.ogg" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 37.855
@@ -87,6 +88,10 @@ target_path = NodePath("..")
 autoplay = "spawn"
 anims/default = SubResource( 2 )
 anims/spawn = SubResource( 3 )
+
+[node name="ImpactoSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
