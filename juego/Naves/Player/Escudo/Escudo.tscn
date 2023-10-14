@@ -4,7 +4,7 @@
 [ext_resource path="res://juego/Naves/Player/Escudo/escudo2.png" type="Texture" id=2]
 [ext_resource path="res://juego/Naves/Player/Escudo/EscudoSonido.ogg" type="AudioStream" id=3]
 [ext_resource path="res://juego/Naves/Player/Escudo/escudo1.png" type="Texture" id=4]
-[ext_resource path="res://juego/Naves/Player/Escudo.gd" type="Script" id=5]
+[ext_resource path="res://juego/Naves/Player/Escudo/Escudo.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 79.0
@@ -212,6 +212,7 @@ shape = SubResource( 1 )
 
 [node name="SpriteCompleto" type="Sprite" parent="."]
 visible = false
+modulate = Color( 0.41, 4.5, 1.8, 1 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 
