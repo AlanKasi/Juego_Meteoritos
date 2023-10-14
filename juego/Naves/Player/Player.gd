@@ -23,6 +23,7 @@ onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx:Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx:AudioStreamPlayer = $ImpactoSFX
+onready var escudo:Escudo = $Escudo
 
 ## Metodos
 func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
@@ -36,7 +37,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	player_input()
 
-func _unhandled_input(event) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if not esta_input_activo():
 		return
 	
@@ -57,6 +58,10 @@ func _unhandled_input(event) -> void:
 		
 	if (event.is_action_released("mov_adelante") or event.is_action_released("mov_atras")):
 		motor_sfx.sonido_off()
+	
+	#Control Escudo
+	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
+		escudo.activar()
 
 ## Metodos Custom
 func controlador_estado(nuevo_estado: int) -> void:
