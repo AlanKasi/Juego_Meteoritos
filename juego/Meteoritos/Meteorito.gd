@@ -2,16 +2,30 @@ class_name Meteorito
 extends RigidBody2D
 
 ## Atributos Export
-export var vel_lineal_base:Vector2 = Vector2(100.0, 100.0)
-export var vel_ang_base:float = 1.0
+export var vel_lineal_base:Vector2 = Vector2(150.0, 150.0)
+export var vel_ang_base:float = 1.5
 export var hitpoints_base:float = 10.0
 
 ## Atributos
 var hitpoints:float
+var esta_en_sector:bool = true setget set_esta_en_sector
+var pos_spawn_original: Vector2
+var vel_spawn_original: Vector2
 
 ## Atributos Onready
 onready var impacto_sfx:AudioStreamPlayer = $ImpactoSFX
 onready var impacto_animacion:AnimationPlayer = $AnimationPlayer
+
+##Metodos
+func _integrate_forces(state: Physics2DDirectBodyState) -> void:
+	if esta_en_sector:
+		return
+	
+	var mi_transform := state.get_transform()
+	mi_transform.origin = pos_spawn_original
+	linear_velocity = vel_spawn_original
+	state.set_transform(mi_transform)
+	esta_en_sector = true
 
 ### Metodos Custom
 func recibir_danio(danio: float) -> void:
@@ -26,11 +40,19 @@ func destruir() -> void:
 	Eventos.emit_signal("meteorito_destruido", global_position)
 	queue_free()
 
+func aleatorizar_velocidad() -> float:
+	randomize()
+	return rand_range(1.1, 1.4)
+
+##Setters y Getters
+func set_esta_en_sector(valor: bool) -> void:
+	esta_en_sector = valor
 
 
 ## Constructor
 func crear(pos: Vector2, dir: Vector2, tamanio: float) -> void:
 	position = pos
+	pos_spawn_original = position
 	
 	#Calcular Masa, tamanio de sprite y de colisionador
 	mass *= tamanio
@@ -43,7 +65,8 @@ func crear(pos: Vector2, dir: Vector2, tamanio: float) -> void:
 	$CollisionShape2D.shape = forma_colision
 	
 	#Calcular velocidades
-	linear_velocity = (vel_lineal_base * dir / tamanio) * aleatorizar_velocidad()
+	linear_velocity = vel_lineal_base * dir / tamanio * aleatorizar_velocidad()
+	vel_spawn_original = linear_velocity
 	angular_velocity = (vel_ang_base / tamanio) * aleatorizar_velocidad()
 	
 	#Calcular hitpoints
@@ -53,7 +76,3 @@ func crear(pos: Vector2, dir: Vector2, tamanio: float) -> void:
 	#print("hitpoints: ", hitpoints)
 
 
-##Metodos Custom
-func aleatorizar_velocidad() -> float:
-	randomize()
-	return rand_range(1.1, 1.4)
