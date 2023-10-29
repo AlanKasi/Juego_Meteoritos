@@ -196,6 +196,7 @@ shape = SubResource( 4 )
 
 [node name="DetectorIzquierda" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( -1400, 0 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -205,6 +206,7 @@ shape = SubResource( 5 )
 
 [node name="DetectorDerecha" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 1400, 0 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -214,6 +216,7 @@ shape = SubResource( 6 )
 
 [node name="DetectorSuperior" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, -900 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -223,6 +226,7 @@ shape = SubResource( 7 )
 
 [node name="DetectorInferior" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, 900 )
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -234,19 +238,19 @@ shape = SubResource( 8 )
 
 [node name="MeteoritoSpawner" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, 0 )
-direccion = Vector2( -1, 0 )
+direccion = Vector2( 1, 0 )
 
 [node name="MeteoritoSpawner2" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 1150, 0 )
-direccion = Vector2( 1, 0 )
+direccion = Vector2( -1, 0 )
 
 [node name="MeteoritoSpawner3" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 0, -720 )
-direccion = Vector2( 0, -1 )
+direccion = Vector2( 0, 1 )
 
 [node name="MeteoritoSpawner4" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 0, 720 )
-direccion = Vector2( 0, 1 )
+direccion = Vector2( 0, -1 )
 
 [node name="MeteoritoSpawner5" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, -720 )
