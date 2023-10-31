@@ -85,7 +85,7 @@ func controlador_estado(nuevo_estado: int) -> void:
 			colisionador.set_deferred("disabled", true)
 		ESTADO.MUERTO:
 			colisionador.set_deferred("disabled", true)
-			canion.set_puede_disparar(true)
+			canion.set_puede_disparar(false)
 			Eventos.emit_signal("nave_destruida", self, global_position, 3)
 			queue_free()
 		_:
@@ -124,8 +124,6 @@ func player_input() -> void:
 		
 	if Input.is_action_just_released("disparo_principal"):
 		canion.set_esta_disparando(false)
-
-
 
 
 
