@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=9]
 [ext_resource path="res://juego/Estacion/EstacionRecarga.tscn" type="PackedScene" id=10]
 [ext_resource path="res://juego/Niveles/Fondos/fondo.png" type="Texture" id=11]
+[ext_resource path="res://juego/Naves/Enemigos/EnemigoInterceptor.tscn" type="PackedScene" id=12]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 2 )
@@ -22,7 +23,7 @@ sector_meteoritos = ExtResource( 6 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 693, 923 )
+position = Vector2( 198, 229 )
 tipo_peligro = "Meteorito"
 numero_peligros = 3
 
@@ -30,9 +31,6 @@ numero_peligros = 3
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
 position = Vector2( 181, 772 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 960, 539 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
@@ -160,5 +158,13 @@ texture = ExtResource( 11 )
 [node name="Sprite28" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 3000, 0 )
 texture = ExtResource( 11 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 884, 658 )
+cant_explos = 3
+
+[node name="EnemigoInterceptor" parent="." instance=ExtResource( 12 )]
+position = Vector2( 777, 898 )
+cant_explos = 1
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
