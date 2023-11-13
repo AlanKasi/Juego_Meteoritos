@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ImpactoBase.ogg-3ba432d3c0f8a6fae4d6062fb9f45f86.oggstr"
+
+[deps]
+
+source_file="res://juego/Estacion/ImpactoBase.ogg"
+dest_files=[ "res://.import/ImpactoBase.ogg-3ba432d3c0f8a6fae4d6062fb9f45f86.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
