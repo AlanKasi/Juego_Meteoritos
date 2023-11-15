@@ -37,6 +37,7 @@ func conectar_seniales() -> void:
 	Eventos.connect("spawn_meteorito", self, "_on_spawn_meteoritos")
 	Eventos.connect("meteorito_destruido", self, "_on_meteorito_destruido")
 	Eventos.connect("base_destruida", self, "_on_base_destruida")
+	Eventos.connect("spawn_orbital", self, "_on_spawn_orbital")
 
 func crear_contenedores() -> void:
 	#Proyectiles
@@ -132,7 +133,7 @@ func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones: int) -
 		add_child(new_explosion)
 		yield(get_tree().create_timer(0.6),"timeout")
 
-func _on_base_destruida(pos_partes:Array) -> void:
+func _on_base_destruida(_bas_enem:BaseEnemiga, pos_partes:Array) -> void:
 	for posicion in pos_partes:
 		crear_explosion(posicion)
 		yield(get_tree().create_timer(0.5), "timeout")
@@ -143,6 +144,9 @@ func crear_explosion(posicion: Vector2, numero: int = 1, intervalo: float = 0.0,
 		new_explosion.global_position = posicion + crear_posicion_aleatoria(rangos_aleatorios.x, rangos_aleatorios.y)
 		add_child(new_explosion)
 		yield(get_tree().create_timer(intervalo),"timeout")
+
+func _on_spawn_orbital(enemigo: EnemigoOrbital) -> void:
+	contenedor_enemigos.add_child(enemigo)
 
 func _on_spawn_meteoritos(pos_spawn: Vector2, dir_meteorito: Vector2, tamanio: float) -> void:
 	var new_meteorito:Meteorito = meteorito.instance()

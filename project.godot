@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Naves/Enemigos/EnemigoInterceptor.gd"
 }, {
+"base": "EnemigoBase",
+"class": "EnemigoOrbital",
+"language": "GDScript",
+"path": "res://juego/Naves/Enemigos/EnemigoOrbital.gd"
+}, {
 "base": "Area2D",
 "class": "Escudo",
 "language": "GDScript",
@@ -99,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Naves/Player/Player.gd"
 }, {
+"base": "Node2D",
+"class": "PosicionSpawn",
+"language": "GDScript",
+"path": "res://juego/Estacion/PosicionesSpawn.gd"
+}, {
 "base": "Area2D",
 "class": "Proyectil",
 "language": "GDScript",
@@ -128,6 +138,7 @@ _global_script_class_icons={
 "EnemigoBase": "",
 "EnemigoDummy": "",
 "EnemigoInterceptor": "",
+"EnemigoOrbital": "",
 "Escudo": "",
 "EstacionRecarga": "",
 "Estela": "",
@@ -138,6 +149,7 @@ _global_script_class_icons={
 "NaveBase": "",
 "Nivel": "",
 "Player": "",
+"PosicionSpawn": "",
 "Proyectil": "",
 "RayoLaser": "",
 "SectorDePeligro": "",
