@@ -9,7 +9,8 @@
 [ext_resource path="res://juego/Estacion/AreaColision.gd" type="Script" id=7]
 [ext_resource path="res://juego/Estacion/ImpactoBase.ogg" type="AudioStream" id=8]
 [ext_resource path="res://juego/Estacion/PosicionesSpawn.gd" type="Script" id=9]
-[ext_resource path="res://juego/Estacion/RutaEnemigo.gd" type="Script" id=10]
+[ext_resource path="res://juego/Estacion/RutaEnemigo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://juego/Estacion/RutaEnemigo2.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 63.0
@@ -181,13 +182,9 @@ tracks/3/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Curve2D" id=7]
-_data = {
-"points": PoolVector2Array( 56, 70, -56, -70, -402, -26, 2, 80, -2, -80, -374, -166, -20, 80, 20, -80, -282, -290, -32, 70, 32, -70, -120, -386, -54, 40, 54, -40, 46, -402, -74, -2, 74, 2, 168, -350, -72, -28, 72, 28, 286, -250, -54, -54, 54, 54, 348, -132, -26, -80, 26, 80, 362, 34, 14, -80, -14, 80, 318, 162, 20, -64, -20, 64, 256, 246, 26, -62, -26, 62, 150, 328, 28, -66, -28, 66, 62, 370, 50, -32, -50, 32, -82, 376, 50, -16, -50, 16, -200, 310, 68, -12, -68, 12, -292, 240, 66, 44, -66, -44, -384, 96, -12, -52, 12, 52, -400, -24, 0, 0, 0, 0, -402, -26 )
-}
-
 [node name="BaseEnemiga" type="Node2D"]
 script = ExtResource( 6 )
+rutas = [ ExtResource( 10 ), ExtResource( 11 ) ]
 
 [node name="Sprites" type="Node2D" parent="."]
 z_index = 1
@@ -259,11 +256,6 @@ position = Vector2( -400, 0 )
 
 [node name="Este" type="Position2D" parent="PosicionesSpawn"]
 position = Vector2( 400, 0 )
-
-[node name="RutaEnemigo" type="Path2D" parent="."]
-rotation = 1.5708
-curve = SubResource( 7 )
-script = ExtResource( 10 )
 
 [node name="TimerSpawnerEnemigos" type="Timer" parent="."]
 
