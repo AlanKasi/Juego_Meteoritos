@@ -63,6 +63,12 @@ func _process(_delta: float) -> void:
 	player_input()
 
 
+func desactivar_controles() -> void:
+	controlador_estado(ESTADO.SPAWN)
+	empuje = Vector2.ZERO
+	motor_sfx.sonido_off()
+	laser.set_is_casting(false)
+
 ## Metodos Custom
 func player_input() -> void:
 	if not esta_input_activo():

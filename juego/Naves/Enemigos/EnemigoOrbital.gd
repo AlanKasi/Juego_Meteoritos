@@ -8,7 +8,7 @@ var path_follow:PathFollow2D
 
 ## Atributos Export
 export var rango_max_ataque: float = 1400.0
-export var velocidad: float = 600.0
+export var velocidad: float = 400.0
 
 ## Atributos Onready
 onready var detector_obstaculo:RayCast2D = $DetectorObstaculo
@@ -24,8 +24,7 @@ func crear(pos: Vector2, duenia: Node2D, ruta_duenia: Path2D) -> void:
 ## Metodos
 func _ready() -> void:
 	Eventos.connect("base_destruida", self, "_on_base_destruida")
-	#Temporal
-	canion.set_esta_disparando(true)
+
 
 func _process(delta: float) -> void:
 	path_follow.offset += velocidad * delta

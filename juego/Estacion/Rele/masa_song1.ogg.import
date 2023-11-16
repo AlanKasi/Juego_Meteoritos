@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/masa_song1.ogg-5b9cf37cfd27911ef4c1635b9fb9309e.oggstr"
+
+[deps]
+
+source_file="res://juego/Estacion/Rele/masa_song1.ogg"
+dest_files=[ "res://.import/masa_song1.ogg-5b9cf37cfd27911ef4c1635b9fb9309e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
