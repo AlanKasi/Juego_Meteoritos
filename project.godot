@@ -34,6 +34,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/Proyectiles/Canion.gd"
 }, {
+"base": "NinePatchRect",
+"class": "ContenedorInformacion",
+"language": "GDScript",
+"path": "res://juego/Ul/ContenedorInformacion.gd"
+}, {
+"base": "ContenedorInformacion",
+"class": "ContenedorInformacionEnergia",
+"language": "GDScript",
+"path": "res://juego/Ul/ContenedorInformacionEnergia.gd"
+}, {
 "base": "NaveBase",
 "class": "EnemigoBase",
 "language": "GDScript",
@@ -73,6 +83,11 @@ _global_script_classes=[ {
 "class": "ExplosionMeteorito",
 "language": "GDScript",
 "path": "res://juego/Explosiones/ExplosionMeteorito.gd"
+}, {
+"base": "CanvasLayer",
+"class": "HUD",
+"language": "GDScript",
+"path": "res://juego/Ul/HUD.gd"
 }, {
 "base": "RigidBody2D",
 "class": "Meteorito",
@@ -145,6 +160,8 @@ _global_script_class_icons={
 "CamaraJuego": "",
 "CamaraPlayer": "",
 "Canion": "",
+"ContenedorInformacion": "",
+"ContenedorInformacionEnergia": "",
 "EnemigoBase": "",
 "EnemigoDummy": "",
 "EnemigoInterceptor": "",
@@ -153,6 +170,7 @@ _global_script_class_icons={
 "EstacionRecarga": "",
 "Estela": "",
 "ExplosionMeteorito": "",
+"HUD": "",
 "Meteorito": "",
 "MeteoritoSpawner": "",
 "Motor": "",
