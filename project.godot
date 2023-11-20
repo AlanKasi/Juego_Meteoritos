@@ -168,6 +168,11 @@ _global_script_classes=[ {
 "class": "SectorMeteoritos",
 "language": "GDScript",
 "path": "res://juego/Meteoritos/SectorMeteoritos.gd"
+}, {
+"base": "ParallaxBackground",
+"class": "StarFieldBackground",
+"language": "GDScript",
+"path": "res://juego/Niveles/Fondos/FondoEstrellas.gd"
 } ]
 _global_script_class_icons={
 "AreaAtraccion": "",
@@ -201,7 +206,8 @@ _global_script_class_icons={
 "ReleMasa": "",
 "RutaEnemigo": "",
 "SectorDePeligro": "",
-"SectorMeteoritos": ""
+"SectorMeteoritos": "",
+"StarFieldBackground": ""
 }
 
 [application]
