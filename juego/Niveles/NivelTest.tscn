@@ -31,27 +31,34 @@ rele_masa = ExtResource( 15 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 958, 667 )
+position = Vector2( -420, 1042 )
 tipo_peligro = "Meteorito"
 numero_peligros = 3
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
-position = Vector2( 2748, 1357 )
+position = Vector2( 3548, -656 )
 
-[node name="TriggersInterceptores" type="Node" parent="."]
-
-[node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
-position = Vector2( -875, 1610 )
-tipo_peligro = "Enemigo"
-numero_peligros = 2
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
+position = Vector2( 4837, 734 )
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 1379, 2308 )
+position = Vector2( 319, 2473 )
 orbital = ExtResource( 14 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( 3183, 2518 )
+orbital = ExtResource( 14 )
+
+[node name="TriggersInterceptores" type="Node" parent="."]
+
+[node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
+position = Vector2( 1677, 581 )
+tipo_peligro = "Enemigo"
+numero_peligros = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )

@@ -12,6 +12,7 @@ export var tiempo_transicion_camara: float = 1.5
 export var tiempo_limite:int = 500
 
 
+
 ## Atributos Onready
 onready var contenedor_proyectiles:Node
 onready var contenedor_meteoritos:Node

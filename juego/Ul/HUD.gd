@@ -9,6 +9,8 @@ onready var info_tiempo_restante:ContenedorInformacion = $InfoTiempoResta
 onready var info_laser:ContenedorInformacionEnergia = $InfoLaser
 onready var info_escudo:ContenedorInformacionEnergia = $InfoEscudo
 
+
+
 ## Metodos
 func _ready() -> void:
 	conectar_seniales()
@@ -74,3 +76,4 @@ func _on_nave_destruida(nave:NaveBase, _posicion, _explosiones) -> void:
 	if nave is Player:
 		get_tree().call_group("contenedor_info", "set_esta_activo", false)
 		get_tree().call_group("contenedor_info", "ocultar")
+

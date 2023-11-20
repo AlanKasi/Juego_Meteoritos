@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://juego/Naves/NaveBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/Naves/Enemigos/EnemigoInterceptor.gd" type="Script" id=2]
@@ -110,7 +110,25 @@ radius = 553.058
 [sub_resource type="CircleShape2D" id=3]
 radius = 678.047
 
-[node name="EnemigoInterceptor" instance=ExtResource( 1 )]
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.972549, 0.980392, 0.00784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.984314, 0.0156863, 0.0156863, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[node name="EnemigoInterceptor" groups=["minimapa"] instance=ExtResource( 1 )]
 collision_layer = 2
 collision_mask = 11
 physics_material_override = SubResource( 6 )
@@ -163,6 +181,14 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" index="0"]
 modulate = Color( 0, 0, 0, 1 )
 shape = SubResource( 3 )
+
+[node name="BarraSalud" parent="." index="8"]
+margin_left = -96.0
+margin_top = 88.0
+margin_right = 80.0
+margin_bottom = 106.0
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="AreaDisparo" to="." method="_on_AreaDisparo_body_entered"]
