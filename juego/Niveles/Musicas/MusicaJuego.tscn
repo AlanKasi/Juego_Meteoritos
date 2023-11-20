@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego/Niveles/Menu/boton.ogg" type="AudioStream" id=1]
+[ext_resource path="res://juego/Niveles/Menu/POL-astro-force-short-menu.wav" type="AudioStream" id=2]
+[ext_resource path="res://juego/Niveles/Musicas/MusicaJuego.gd" type="Script" id=3]
+
+[node name="MusicaJuego" type="Node"]
+script = ExtResource( 3 )
+
+[node name="MusicaNivel" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = "Musica"
+
+[node name="MusicaCombate" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = "Musica"
+
+[node name="TweenMusicaOn" type="Tween" parent="."]
+
+[node name="TweenMusicaOff" type="Tween" parent="."]
+
+[node name="MusicaMenuPrincipal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Musica"
+
+[node name="BotonMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Botones"
+
+[connection signal="tween_completed" from="TweenMusicaOff" to="." method="_on_TweenMusicaOff_tween_completed"]

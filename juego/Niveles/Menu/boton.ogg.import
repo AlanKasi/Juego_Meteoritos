@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/boton.ogg-d12c698a4e5ddc5a737de9ad93bd4974.oggstr"
+
+[deps]
+
+source_file="res://juego/Niveles/Menu/boton.ogg"
+dest_files=[ "res://.import/boton.ogg-d12c698a4e5ddc5a737de9ad93bd4974.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
