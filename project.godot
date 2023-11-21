@@ -212,7 +212,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Juego Meteoritos"
+config/name="Juego Meteoritos / Alan Vladimir Kasibrodiuk Veuthey"
 run/main_scene="res://juego/Niveles/Menu/MenuPrincipal.tscn"
 config/icon="res://player_orange.png"
 

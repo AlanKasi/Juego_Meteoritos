@@ -23,6 +23,7 @@ explosion_meteorito = ExtResource( 8 )
 sector_meteoritos = ExtResource( 6 )
 enemigo_interceptor = ExtResource( 12 )
 rele_masa = ExtResource( 15 )
+tiempo_limite = 150
 musica_nivel = ExtResource( 18 )
 musica_combate = ExtResource( 17 )
 

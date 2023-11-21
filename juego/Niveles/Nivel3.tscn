@@ -4,14 +4,20 @@
 [ext_resource path="res://juego/Estacion/EstacionRecarga.tscn" type="PackedScene" id=2]
 [ext_resource path="res://juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=4]
 
-[node name="Nivel2" instance=ExtResource( 1 )]
-prox_nivel = "res://juego/Niveles/Nivel3.tscn"
+[node name="Nivel3" instance=ExtResource( 1 )]
+prox_nivel = "res://juego/Niveles/Nivel4.tscn"
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
-position = Vector2( 3117, 533 )
+position = Vector2( 3175, 393 )
+
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 479, 1880 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 4 )]
-position = Vector2( 4579, 570 )
+position = Vector2( 2998, 1905 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 4 )]
+position = Vector2( 4313, 1341 )
 
 [node name="StarFieldBackground" parent="." index="10"]
-color_fondo = Color( 0.0941176, 0.054902, 0.286275, 1 )
+color_fondo = Color( 0.0196078, 0.0862745, 0.113725, 1 )

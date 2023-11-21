@@ -8,10 +8,10 @@
 prox_nivel = "res://juego/Niveles/Nivel2.tscn"
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
-position = Vector2( 2893, 1300 )
+position = Vector2( 2514, 672 )
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
-position = Vector2( 2127, 2429 )
+position = Vector2( 2268, 2078 )
 
 [node name="Player" parent="." index="11"]
 position = Vector2( 458, 1334 )
