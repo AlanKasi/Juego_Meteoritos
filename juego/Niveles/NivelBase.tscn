@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://juego/Niveles/Nivel.gd" type="Script" id=2]
@@ -8,18 +8,14 @@
 [ext_resource path="res://juego/Meteoritos/SectorMeteoritos.tscn" type="PackedScene" id=6]
 [ext_resource path="res://juego/Meteoritos/Meteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://juego/Explosiones/ExplosionMeteorito.tscn" type="PackedScene" id=8]
-[ext_resource path="res://juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=9]
-[ext_resource path="res://juego/Estacion/EstacionRecarga.tscn" type="PackedScene" id=10]
 [ext_resource path="res://juego/Naves/Enemigos/EnemigoInterceptor.tscn" type="PackedScene" id=12]
-[ext_resource path="res://juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=13]
-[ext_resource path="res://juego/Naves/Enemigos/EnemigoOrbital.tscn" type="PackedScene" id=14]
 [ext_resource path="res://juego/Estacion/Rele/ReleMasa.tscn" type="PackedScene" id=15]
 [ext_resource path="res://juego/Ul/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://juego/Niveles/Musicas/POL-combat-plan-short.wav" type="AudioStream" id=17]
 [ext_resource path="res://juego/Niveles/Musicas/POL-astro-force-short.wav" type="AudioStream" id=18]
 [ext_resource path="res://juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=19]
 
-[node name="NivelTest" type="Node2D"]
+[node name="NivelBase" type="Node2D"]
 script = ExtResource( 2 )
 explosion = ExtResource( 4 )
 meteorito = ExtResource( 7 )
@@ -34,35 +30,11 @@ musica_combate = ExtResource( 17 )
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
-[node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 9 )]
-position = Vector2( 1612, 604 )
-tipo_peligro = "Meteorito"
-numero_peligros = 3
-
 [node name="ContenedorEstaciones" type="Node" parent="."]
-
-[node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
-position = Vector2( 3548, -656 )
-
-[node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 10 )]
-position = Vector2( 4837, 734 )
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
-[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 554, 2600 )
-orbital = ExtResource( 14 )
-
-[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 3183, 2518 )
-orbital = ExtResource( 14 )
-
 [node name="TriggersInterceptores" type="Node" parent="."]
-
-[node name="SectorDePeligro" parent="TriggersInterceptores" instance=ExtResource( 9 )]
-position = Vector2( 2217, 562 )
-tipo_peligro = "Enemigo"
-numero_peligros = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
@@ -80,14 +52,13 @@ one_shot = true
 
 [node name="ActualizadorTimer" type="Timer" parent="."]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2875, -541 )
-cant_explos = 3
-
 [node name="StarFieldBackground" parent="." instance=ExtResource( 19 )]
+color_fondo = Color( 0.223529, 0.054902, 0.286275, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1308, 1349 )
+cant_explos = 3
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="timeout" from="ActualizadorTimer" to="." method="_on_ActualizadorTimer_timeout"]
-
-[editable path="StarFieldBackground"]

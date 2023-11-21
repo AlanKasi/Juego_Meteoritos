@@ -213,7 +213,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Juego Meteoritos"
-run/main_scene="res://juego/Niveles/NivelTest.tscn"
+run/main_scene="res://juego/Niveles/Menu/MenuPrincipal.tscn"
 config/icon="res://player_orange.png"
 
 [autoload]

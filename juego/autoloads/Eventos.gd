@@ -11,6 +11,7 @@ signal base_destruida(base, posiciones)
 ## HUD
 signal nivel_iniciado()
 signal nivel_terminado()
+signal nivel_completado()
 signal detector_zona_recarga(entrando)
 signal cambio_numero_meteoritos(numero)
 signal actualizar_tiempo(tiempo_restante)

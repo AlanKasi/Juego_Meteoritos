@@ -9,6 +9,7 @@ font_data = ExtResource( 1 )
 
 [node name="MenuPrincipal" type="Node"]
 script = ExtResource( 2 )
+nivel_inicial = "res://juego/Niveles/Nivel1.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
