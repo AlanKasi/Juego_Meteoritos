@@ -30,10 +30,6 @@ func _process(_delta: float) -> void:
 	var player_objetivo:Player = DatosJuego.get_player_actual()
 	if not player_objetivo:
 		return
-	
-#	var dir_player:Vector2 = player_objetivo.global_position - global_position
-#	var angulo_player: float = rad2deg(dir_player.angle())
-#	print(angulo_player)
 
 ##  Metodos Custom
 func recibir_danio(danio: float) -> void:

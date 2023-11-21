@@ -6,7 +6,7 @@
 
 [node name="Nivel4" instance=ExtResource( 1 )]
 position = Vector2( 5, -5 )
-prox_nivel = "res://juego/Niveles/Menu/MenuPrincipal.tscn"
+prox_nivel = "res://juego/Niveles/Nivel5.tscn"
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
 position = Vector2( 3971, 847 )

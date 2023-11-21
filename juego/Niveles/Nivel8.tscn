@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/Estacion/EstacionRecarga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/Estacion/BaseEnemiga.tscn" type="PackedScene" id=3]
+
+[node name="Nivel8" instance=ExtResource( 1 )]
+prox_nivel = "res://juego/Niveles/Nivel9.tscn"
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
+position = Vector2( 902, -1048 )
+
+[node name="StarFieldBackground" parent="." index="10"]
+color_fondo = Color( 0.0117647, 0.145098, 0.0156863, 1 )
